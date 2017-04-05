@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "FaxtimeRest", "FaxtimeRest\FaxtimeRest.njsproj", "{52987E15-3BA4-4672-9EA5-DE6DC565FF7C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52987E15-3BA4-4672-9EA5-DE6DC565FF7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52987E15-3BA4-4672-9EA5-DE6DC565FF7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52987E15-3BA4-4672-9EA5-DE6DC565FF7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52987E15-3BA4-4672-9EA5-DE6DC565FF7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,9 @@
+{
+  "name": "faxtime-rest",
+  "version": "0.0.0",
+  "description": "FaxtimeRest",
+  "main": "server.js",
+  "author": {
+    "name": "songhj"
+  }
+}

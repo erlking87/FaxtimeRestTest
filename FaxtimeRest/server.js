@@ -28,7 +28,7 @@ app.use('/docs', swaggerUi({
 }));
 
 server.listen(port, function () { // fifth and final change
-    console.log("start server");
+    console.log("start server port : " + port);
 });
 
 app.get('/', (req, res) => {

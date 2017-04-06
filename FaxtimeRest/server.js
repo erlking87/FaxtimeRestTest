@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 var port = process.env.PORT || 8000; // first change
-//var port = 1443;
+//var port = 8000;
 var http = require('http');
 var express = require('express');
 var bodyParser = require('body-parser');
@@ -14,6 +14,7 @@ var app = express();
 var server = http.createServer(app);
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(swaggerize({
     api: path.resolve('./config/swagger.json'), // third change
@@ -36,12 +37,22 @@ app.get('/', (req, res) => {
 });
 
 app.post('/v1/sender/sms', (req, res) => {
-    var userId = req.body.userId;
-    var password = req.body.password;
-
-    console.log("userId : " + userId);
-    console.log("password : " + password);
+    console.log("id : " + req.body.id);
+    console.log("pw : " + req.body.pw);
+    console.log("token : " + req.body.token);
+    res.json(result);
 });
+
+app.get('/v1', function (req, res) {
+    console.log(req.params.id);
+    return res.send('test');
+});
+
+let result = {
+    "code": "success",
+    "data": null,
+    "message":null
+}
 
 /*
 var http = require('http');

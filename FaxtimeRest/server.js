@@ -31,6 +31,7 @@ server.listen(port, function () { // fifth and final change
 });
 
 app.get('/', (req, res) => {
+    console.log("/start");
     res.send('Hello World!\n');
 });
 

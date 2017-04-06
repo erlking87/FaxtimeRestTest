@@ -42,7 +42,6 @@
     <Content Include="config\swagger.json" />
     <None Include="faxtimerest - Web Deploy.pubxml" />
     <Content Include="iisnode.yml" />
-    <Content Include="index.html" />
     <Content Include="lib\contacts.json" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config" />

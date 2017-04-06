@@ -1,7 +1,7 @@
 ﻿'use strict';
 
-//var port = process.env.PORT || 8000; // first change
-var port = 1443;
+var port = process.env.PORT || 8000; // first change
+//var port = 1443;
 var http = require('http');
 var express = require('express');
 var bodyParser = require('body-parser');

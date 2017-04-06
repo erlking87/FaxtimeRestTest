@@ -37,9 +37,11 @@ app.get('/', (req, res) => {
 });
 
 app.post('/v1/sender/sms', (req, res) => {
+    var userIP = getUserIP(req);
     console.log("id : " + req.body.id);
     console.log("pw : " + req.body.pw);
     console.log("token : " + req.body.token);
+    console.log("userIp : " + userIP);
     res.json(result);
 });
 
@@ -62,3 +64,25 @@ http.createServer(function (req, res) {
     res.end('Hello World\n');
 }).listen(port);
 */
+
+
+function getUserIP(req) {
+    var ipAddress;
+
+    if (!!req.hasOwnProperty('sessionID')) {
+        ipAddress = req.headers['x-forwarded-for'];
+    } else {
+        if (!ipAddress) {
+            var forwardedIpsStr = req.header('x-forwarded-for');
+
+            if (forwardedIpsStr) {
+                var forwardedIps = forwardedIpsStr.split(',');
+                ipAddress = forwardedIps[0];
+            }
+            if (!ipAddress) {
+                ipAddress = req.connection.remoteAddress;
+            }
+        }
+    }
+    return ipAddress;
+}

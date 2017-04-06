@@ -5,6 +5,7 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>FaxtimeRest</Name>
     <RootNamespace>FaxtimeRest</RootNamespace>
+    <NameOfLastUsedPublishProfile>faxtimerest - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -39,7 +40,9 @@
     <Compile Include="server.js" />
     <Content Include="bin\index.html" />
     <Content Include="config\swagger.json" />
+    <None Include="faxtimerest - Web Deploy.pubxml" />
     <Content Include="iisnode.yml" />
+    <Content Include="index.html" />
     <Content Include="lib\contacts.json" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config" />

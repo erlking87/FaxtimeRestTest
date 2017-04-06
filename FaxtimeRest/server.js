@@ -35,6 +35,14 @@ app.get('/', (req, res) => {
     res.send('Hello World!\n');
 });
 
+app.post('/v1/sender/sms', (req, res) => {
+    var userId = req.body.userId;
+    var password = req.body.password;
+
+    console.log("userId : " + userId);
+    console.log("password : " + password);
+});
+
 /*
 var http = require('http');
 var port = process.env.port || 1337;

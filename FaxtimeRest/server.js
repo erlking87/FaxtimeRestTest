@@ -38,11 +38,36 @@ app.get('/', (req, res) => {
 
 app.post('/v1/sender/sms', (req, res) => {
     var userIP = getUserIP(req);
+
+    var id = req.body.id;
+    var pw = req.body.pw;
+    var token = req.body.token;
+
     console.log("id : " + req.body.id);
     console.log("pw : " + req.body.pw);
     console.log("token : " + req.body.token);
     console.log("userIp : " + userIP);
-    res.json(result);
+
+    if (id != null && pw != null && token != null) {
+
+        let result = {
+            "code": "success",
+            "data": null,
+            "message": null
+        }
+
+        res.json(result);
+    } else {
+
+        let result = {
+            "code": "fail",
+            "data": null,
+            "message": "invalid message"
+        }
+
+        res.json(result);
+    }
+
 });
 
 app.get('/v1', function (req, res) {
@@ -50,11 +75,6 @@ app.get('/v1', function (req, res) {
     return res.send('test');
 });
 
-let result = {
-    "code": "success",
-    "data": null,
-    "message":null
-}
 
 /*
 var http = require('http');
@@ -64,6 +84,7 @@ http.createServer(function (req, res) {
     res.end('Hello World\n');
 }).listen(port);
 */
+
 
 
 function getUserIP(req) {

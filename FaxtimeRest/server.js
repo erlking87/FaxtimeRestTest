@@ -9,12 +9,22 @@ var swaggerize = require('swaggerize-express');
 var swaggerUi = require('swaggerize-ui'); // second change
 var path = require('path');
 
+var multer = require('multer');
+//var storage = multer.memoryStorage()
+//var upload = multer({ storage: storage })
+var upload = multer({ dest: 'uploads/' });
+var repository = require('./lib/fileRepository');
+
 var app = express();
 
 var server = http.createServer(app);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.post('/v1/others/file/upload', upload.single('file'), (req, res, next) => {
+    repository.uploadFile(req, res, next);
+});
 
 app.use(swaggerize({
     api: path.resolve('./config/swagger.json'), // third change

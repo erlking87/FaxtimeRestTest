@@ -31,18 +31,42 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="data\contacts.js" />
-    <Compile Include="data\contacts\{id}.js" />
     <Compile Include="data\mockgen.js" />
-    <Compile Include="handlers\contacts.js" />
-    <Compile Include="handlers\contacts\{id}.js" />
-    <Compile Include="lib\contactRepository.js" />
+    <Compile Include="data\v1\alimtalk\send.js" />
+    <Compile Include="data\v1\alimtalk\send\{id}.js" />
+    <Compile Include="data\v1\faxtime\fax\send.js" />
+    <Compile Include="data\v1\faxtime\fax\send\{id}.js" />
+    <Compile Include="data\v1\faxtime\mms\result.js" />
+    <Compile Include="data\v1\faxtime\mms\send.js" />
+    <Compile Include="data\v1\faxtime\mms\send\{id}.js" />
+    <Compile Include="data\v1\faxtime\sms\result.js" />
+    <Compile Include="data\v1\faxtime\sms\send.js" />
+    <Compile Include="data\v1\faxtime\sms\send\{id}.js" />
+    <Compile Include="handlers\v1\alimtalk\send.js" />
+    <Compile Include="handlers\v1\alimtalk\send\{id}.js" />
+    <Compile Include="handlers\v1\faxtime\fax\result.js" />
+    <Compile Include="handlers\v1\faxtime\fax\send.js" />
+    <Compile Include="handlers\v1\faxtime\fax\send\{id}.js" />
+    <Compile Include="handlers\v1\faxtime\mms\result.js" />
+    <Compile Include="handlers\v1\faxtime\mms\send.js" />
+    <Compile Include="handlers\v1\faxtime\mms\send\{id}.js" />
+    <Compile Include="handlers\v1\faxtime\sms\result.js" />
+    <Compile Include="handlers\v1\faxtime\sms\send.js" />
+    <Compile Include="handlers\v1\faxtime\sms\send\{id}.js" />
+    <Compile Include="lib\alimtalkRepository.js" />
+    <Compile Include="lib\dbConfig.js" />
+    <Compile Include="lib\dbHelper.js" />
+    <Compile Include="lib\faxtimeFaxRepository.js" />
+    <Compile Include="lib\faxtimeMmsRepository.js" />
+    <Compile Include="lib\faxtimeSmsRepository.js" />
+    <Compile Include="lib\fileRepository.js" />
+    <Compile Include="routes\smsApi.js" />
     <Compile Include="server.js" />
     <Content Include="bin\index.html" />
     <Content Include="config\swagger.json" />
     <None Include="faxtimerest - Web Deploy.pubxml" />
     <Content Include="iisnode.yml" />
-    <Content Include="lib\contacts.json" />
+    <Content Include="lib\error.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config" />
     <Content Include="package.json" />
@@ -52,10 +76,29 @@
     <Folder Include="bin\" />
     <Folder Include="config\" />
     <Folder Include="data\" />
-    <Folder Include="data\contacts\" />
+    <Folder Include="data\v1\" />
+    <Folder Include="data\v1\alimtalk\" />
+    <Folder Include="data\v1\alimtalk\send\" />
+    <Folder Include="data\v1\faxtime\" />
+    <Folder Include="data\v1\faxtime\fax\" />
+    <Folder Include="data\v1\faxtime\fax\send\" />
+    <Folder Include="data\v1\faxtime\mms\" />
+    <Folder Include="data\v1\faxtime\mms\send\" />
+    <Folder Include="data\v1\faxtime\sms\" />
+    <Folder Include="data\v1\faxtime\sms\send\" />
     <Folder Include="handlers\" />
-    <Folder Include="handlers\contacts\" />
+    <Folder Include="handlers\v1\" />
+    <Folder Include="handlers\v1\alimtalk\" />
+    <Folder Include="handlers\v1\alimtalk\send\" />
+    <Folder Include="handlers\v1\faxtime\" />
+    <Folder Include="handlers\v1\faxtime\fax\" />
+    <Folder Include="handlers\v1\faxtime\fax\send\" />
+    <Folder Include="handlers\v1\faxtime\mms\" />
+    <Folder Include="handlers\v1\faxtime\mms\send\" />
+    <Folder Include="handlers\v1\faxtime\sms\" />
+    <Folder Include="handlers\v1\faxtime\sms\send\" />
     <Folder Include="lib\" />
+    <Folder Include="routes\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />

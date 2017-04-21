@@ -1,16 +1,16 @@
 'use strict';
-var Mockgen = require('../mockgen.js');
+var Mockgen = require('../../../mockgen.js');
 /**
- * Operations on /contacts/{id}
+ * Operations on /result
  */
 module.exports = {
     /**
      * summary: 
      * description: 
-     * parameters: id
+     * parameters: 
      * produces: application/json, text/json
      * responses: 200
-     * operationId: contacts_getById
+     * operationId: result_get
      */
     get: {
         200: function (req, res, callback) {
@@ -19,7 +19,7 @@ module.exports = {
              * Replace this by actual data for the api.
              */
             Mockgen().responses({
-                path: '/contacts/{id}',
+                path: '/v1/faxtime/mms/result',
                 operation: 'get',
                 response: '200'
             }, callback);

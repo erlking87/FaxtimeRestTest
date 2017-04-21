@@ -19,8 +19,8 @@ module.exports = {
             + "           , MMS_MSG vmessage \n"
             + "           , SEND_DATE revDttm \n"
             + "           , CALLBACK vsourcetel \n"
-            + "           , SUBSTRING(CONVERT(VARCHAR,DEST_INFO), 0, CHARINDEX('^', DEST_INFO)) vreceiver \n"
-            + "           , SUBSTRING(CONVERT(VARCHAR,DEST_INFO), CHARINDEX('^', DEST_INFO) + 1, LEN(CONVERT(VARCHAR,DEST_INFO)) - CHARINDEX('^', DEST_INFO)) vdestinationtel \n"
+            + "           , SUBSTRING(CONVERT(VARCHAR(80),DEST_INFO), 0, CHARINDEX('^', DEST_INFO)) vreceiver \n"
+            + "           , SUBSTRING(CONVERT(VARCHAR(80),DEST_INFO), CHARINDEX('^', DEST_INFO) + 1, LEN(CONVERT(VARCHAR(80),DEST_INFO)) - CHARINDEX('^', DEST_INFO)) vdestinationtel \n"
             + "           , CONTENT_COUNT file_cnt \n"
             + "           , CONTENT_DATA file_path \n"
             + "           , RESERVED8 msgRate \n"
@@ -28,7 +28,7 @@ module.exports = {
             + "           , COUNT(*) OVER() TOTAL_COUNT \n"            
             + "  FROM SDK_MMS_SEND \n"
             + " WHERE USER_ID in ( \n"
-            + "     SELECT NSID  \n"
+            + "     SELECT CAST(NSID AS VARCHAR)  \n"
             + "	      FROM TBL_RESTAPI_USER \n"
             + "	     WHERE AGENTID = '" + args["agentKey"] + "' \n";
         if(null != args["user"]) {
@@ -232,8 +232,8 @@ module.exports = {
             + "           , MMS_MSG vmessage \n"
             + "           , SEND_DATE revDttm \n"
             + "           , CALLBACK vsourcetel \n"
-            + "           , SUBSTRING(CONVERT(VARCHAR,DEST_INFO), 0, CHARINDEX('^', DEST_INFO)) vreceiver \n"
-            + "           , SUBSTRING(CONVERT(VARCHAR,DEST_INFO), CHARINDEX('^', DEST_INFO) + 1, LEN(CONVERT(VARCHAR,DEST_INFO)) - CHARINDEX('^', DEST_INFO)) vdestinationtel \n"
+            + "           , SUBSTRING(CONVERT(VARCHAR(80),DEST_INFO), 0, CHARINDEX('^', DEST_INFO)) vreceiver \n"
+            + "           , SUBSTRING(CONVERT(VARCHAR(80),DEST_INFO), CHARINDEX('^', DEST_INFO) + 1, LEN(CONVERT(VARCHAR(80),DEST_INFO)) - CHARINDEX('^', DEST_INFO)) vdestinationtel \n"
             + "           , CONTENT_COUNT file_cnt \n"
             + "           , CONTENT_DATA file_path \n"
             + "           , RESERVED8 msgRate \n"
@@ -243,7 +243,7 @@ module.exports = {
             + "           , COUNT(*) OVER() TOTAL_COUNT \n"     
             + "      FROM SDK_MMS_REPORT \n"
             + "     WHERE USER_ID in ( \n"
-            + "         SELECT NSID  \n"
+            + "         SELECT CAST(NSID AS VARCHAR)  \n"
             + "	          FROM TBL_RESTAPI_USER \n"
             + "	         WHERE AGENTID = '" + args["agentKey"] + "' \n";
         if(null != args["user"]) {

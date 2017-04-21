@@ -20,14 +20,14 @@ module.exports = {
             + "           , SMS_MSG vmessage \n"
             + "           , SEND_DATE revDttm \n"
             + "           , CALLBACK vsourcetel \n"
-            + "           , SUBSTRING(CONVERT(VARCHAR,DEST_INFO), 0, CHARINDEX('^', DEST_INFO)) vreceiver \n"
-            + "           , SUBSTRING(CONVERT(VARCHAR,DEST_INFO), CHARINDEX('^', DEST_INFO) + 1, LEN(CONVERT(VARCHAR,DEST_INFO)) - CHARINDEX('^', DEST_INFO)) vdestinationtel \n"
+            + "           , SUBSTRING(CONVERT(VARCHAR(80),DEST_INFO), 0, CHARINDEX('^', DEST_INFO)) vreceiver \n"
+            + "           , SUBSTRING(CONVERT(VARCHAR(80),DEST_INFO), CHARINDEX('^', DEST_INFO) + 1, LEN(CONVERT(VARCHAR(80),DEST_INFO)) - CHARINDEX('^', DEST_INFO)) vdestinationtel \n"
             + "           , RESERVED8 msgRate \n"
             + "           , " + args["currentPage"] + " CURRENT_PAGE \n"
             + "           , COUNT(*) OVER() TOTAL_COUNT \n"            
             + "  FROM SDK_SMS_SEND \n"
             + " WHERE USER_ID in ( \n"
-            + "     SELECT NSID  \n"
+            + "     SELECT CAST(NSID AS VARCHAR)  \n"
             + "	      FROM TBL_RESTAPI_USER \n"
             + "	     WHERE AGENTID = '" + args["agentKey"] + "' \n";
         if(null != args["user"]) {
@@ -220,8 +220,8 @@ module.exports = {
             + "           , SMS_MSG vmessage \n"
             + "           , SEND_DATE revDttm \n"
             + "           , CALLBACK vsourcetel \n"
-            + "           , SUBSTRING(CONVERT(VARCHAR,DEST_INFO), 0, CHARINDEX('^', DEST_INFO)) vreceiver \n"
-            + "           , SUBSTRING(CONVERT(VARCHAR,DEST_INFO), CHARINDEX('^', DEST_INFO) + 1, LEN(CONVERT(VARCHAR,DEST_INFO)) - CHARINDEX('^', DEST_INFO)) vdestinationtel \n"
+            + "           , SUBSTRING(CONVERT(VARCHAR(80),DEST_INFO), 0, CHARINDEX('^', DEST_INFO)) vreceiver \n"
+            + "           , SUBSTRING(CONVERT(VARCHAR(80),DEST_INFO), CHARINDEX('^', DEST_INFO) + 1, LEN(CONVERT(VARCHAR(80),DEST_INFO)) - CHARINDEX('^', DEST_INFO)) vdestinationtel \n"
             + "           , RESERVED8 msgRate \n"
             + "           , SUCC_COUNT \n"
             + "           , FAIL_COUNT \n"
@@ -229,7 +229,7 @@ module.exports = {
             + "           , COUNT(*) OVER() TOTAL_COUNT \n"     
             + "      FROM SDK_SMS_REPORT \n"
             + "     WHERE USER_ID in ( \n"
-            + "         SELECT NSID  \n"
+            + "         SELECT CAST(NSID AS VARCHAR)  \n"
             + "	          FROM TBL_RESTAPI_USER \n"
             + "	         WHERE AGENTID = '" + args["agentKey"] + "' \n";
         if(null != args["user"]) {
@@ -300,7 +300,13 @@ module.exports = {
                     done();
                     return;
                 } else {
-                    var row = (datas instanceof Array) ? datas[i] : datas;
+                    try {
+                        var row = (datas instanceof Array) ? datas[i] : datas;
+                    }catch (exception) {
+                        nextItem(i + 1);
+                        return;
+                    }
+                    
                     var sqlQuery = 
                         "  SELECT SEND_DATE revDttm \n"
                         + "       , DEST_NAME \n"

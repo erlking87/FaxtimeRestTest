@@ -21,7 +21,7 @@ var LogWriter = function(sqlText) {
 
 exports.sqlLogWriter = LogWriter;
 /*exports.sqlOptions = {
-    "pageSize" : 1000
+    "pageSize" : 10
 };
 
 exports.sqlDecode = function (id, object, defaultValue) {
@@ -47,7 +47,7 @@ exports.sqlSelectParameters = function(req) {
     
     result["agentKey"] = req.get("Agent-Key") || "";
     result["user"] = findObject("user", req.query, null);
-    result["pageSize"] = 1000;
+    result["pageSize"] = 10;
     result["currentPage"] = findObject("page", req.query, 1);
     result["startIndex"] = (result["currentPage"] - 1) * result["pageSize"] + 1;
     result["endIndex"] = result["currentPage"] * result["pageSize"];

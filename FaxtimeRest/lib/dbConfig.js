@@ -1,18 +1,18 @@
 /*
-    ½Ç¼­¹ö
+    Â½Ã‡Â¼Â­Â¹Ã¶
 */
 var dbConfig = {
     user: 'faxtime',
     password: 'test2016!',
     server: 'faxtimedb.database.windows.net',
-    database: 'faxtime01',
+    database: 'faxtimeApiTest',
     options: {
         encrypt: true
     }
 };
 
 /*
-    Å×½ºÆ®¼­¹ö
+    Ã…Ã—Â½ÂºÃ†Â®Â¼Â­Â¹Ã¶
 */
 /*
 var dbConfig = {

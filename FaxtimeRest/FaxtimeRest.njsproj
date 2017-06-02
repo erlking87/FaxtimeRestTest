@@ -43,6 +43,8 @@
     <Compile Include="data\v1\faxtime\sms\result.js" />
     <Compile Include="data\v1\faxtime\sms\send.js" />
     <Compile Include="data\v1\faxtime\sms\send\{id}.js" />
+    <Compile Include="data\v1\test\account\send.js" />
+    <Compile Include="data\v1\test\history\send.js" />
     <Compile Include="handlers\v1\alimtalk\send.js" />
     <Compile Include="handlers\v1\alimtalk\send\{id}.js" />
     <Compile Include="handlers\v1\faxtime\fax\result.js" />
@@ -54,6 +56,8 @@
     <Compile Include="handlers\v1\faxtime\sms\result.js" />
     <Compile Include="handlers\v1\faxtime\sms\send.js" />
     <Compile Include="handlers\v1\faxtime\sms\send\{id}.js" />
+    <Compile Include="handlers\v1\test\account\send.js" />
+    <Compile Include="handlers\v1\test\history\send.js" />
     <Compile Include="lib\alimtalkRepository.js" />
     <Compile Include="lib\dbConfig.js" />
     <Compile Include="lib\dbHelper.js" />
@@ -61,6 +65,8 @@
     <Compile Include="lib\faxtimeMmsRepository.js" />
     <Compile Include="lib\faxtimeSmsRepository.js" />
     <Compile Include="lib\fileRepository.js" />
+    <Compile Include="lib\testAccountRepository.js" />
+    <Compile Include="lib\testHistoryRepository.js" />
     <Compile Include="routes\smsApi.js" />
     <Compile Include="server.js" />
     <Content Include="bin\index.html" />
@@ -87,6 +93,9 @@
     <Folder Include="data\v1\faxtime\mms\send\" />
     <Folder Include="data\v1\faxtime\sms\" />
     <Folder Include="data\v1\faxtime\sms\send\" />
+    <Folder Include="data\v1\test\" />
+    <Folder Include="data\v1\test\account\" />
+    <Folder Include="data\v1\test\history\" />
     <Folder Include="handlers\" />
     <Folder Include="handlers\v1\" />
     <Folder Include="handlers\v1\alimtalk\" />
@@ -98,6 +107,13 @@
     <Folder Include="handlers\v1\faxtime\mms\send\" />
     <Folder Include="handlers\v1\faxtime\sms\" />
     <Folder Include="handlers\v1\faxtime\sms\send\" />
+    <Folder Include="handlers\v1\test\" />
+    <Folder Include="handlers\v1\test\account\" />
+    <Folder Include="handlers\v1\test\history\" />
+    <Folder Include="handlers\v1\test\history\" />
+    <Folder Include="handlers\v1\test\history\" />
+    <Folder Include="handlers\v1\test\history\" />
+    <Folder Include="handlers\v1\test\history\" />
     <Folder Include="lib\" />
     <Folder Include="routes\" />
   </ItemGroup>

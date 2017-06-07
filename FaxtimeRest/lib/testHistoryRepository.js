@@ -10,7 +10,7 @@ module.exports = {
     // 스웨거 스팩상 라우터에서 패스 파라미터는 단일항목만 지원함
     selectHistory: function (req, res) {
         var sqlText = 
-            "select top 10 sid, userid, getpoint, maxpoint, evgpoint, result, convert(varchar(5), dbo.getLocalDate(DEFAULT), 101) as date from test_history where userid = '" + req.query['user'] + "' order by sid desc;";
+            "select top 10 sid, userid, getpoint, maxpoint, evgpoint, result, convert(varchar(5), date, 101) as date from test_history where userid = '" + req.query['user'] + "' order by sid desc;";
         return dbHelper.sqlSelect(sqlText, res);
     },
     createHistory: function (req, res) {
